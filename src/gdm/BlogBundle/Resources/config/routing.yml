@@ -1,0 +1,35 @@
+gdmblog_accueil:
+    path: /{page}
+    defaults: { _controller: gdmBlogBundle:Blog:index, page: 1 }
+    requirements:
+        page: \d*
+gdmblog_voir:
+    path: /article/{id}
+    defaults: { _controller: gdmBlogBundle:Blog:voir }
+    requirements:
+        id: \d+
+gdmblog_ajouter:
+    path: /ajouter
+    defaults: { _controller: gdmBlogBundle:Blog:ajouter }
+gdmblog_modifier:
+    path: /modifier/{id}
+    defaults: { _controller: gdmBlogBundle:Blog:modifier }
+    requirements:
+        id: \d+
+gdmblog_supprimer:
+    path: /supprimer/{id}
+    defaults: { _controller: gdmBlogBundle:Blog:supprimer }
+    requirements:
+        id: \d+
+gdmblog_voir_slug:
+    path: /{annee}/{slug}.{format}
+    defaults: { _controller: gdmBlogBundle:Blog:voirSlug, format: html }
+    requirements:
+        annee: \d{4}
+        format: html|xml
+gdmblog_test:
+    path: /test
+    defaults: { _controller: gdmBlogBundle:Blog:test }
+gdmblog_commentaire:
+        path: /commentaire/{id}
+        defaults: { _controller: gdmBlogBundle:Blog:commentaire }

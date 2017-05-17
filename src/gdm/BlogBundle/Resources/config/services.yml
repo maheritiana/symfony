@@ -1,0 +1,19 @@
+parameters:
+#    gdm_blog.example.class: gdm\BlogBundle\Example
+
+services:
+   # gdm_blog.antispam:
+   #     class: gdm\BlogBundle\Antispam\gdmAntispam
+    #    arguments: [@doctrine, 3]
+     #   tags:
+     #       - [ setLocale, [ %locale% ] ]
+    gdm_blog.ckeditor:
+        class: gdm\BlogBundle\Form\Type\CkeditorType
+        tags:
+            - { name: form.type, alias: ckeditor }
+    gdmblog.beta_listener:
+        class: gdm\BlogBundle\Beta\BetaListener
+        arguments: ["2017-08-19"]
+        tags:
+            - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
+            #- { name: kernel.event_listener, event: kernel.controller, method: onKernelController }

@@ -1,0 +1,7 @@
+parameters:
+#    gdm_user.example.class: gdm\UserBundle\Example
+
+services:
+#    gdm_user.example:
+#        class: %gdm_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
